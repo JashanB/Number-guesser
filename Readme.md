@@ -1,4 +1,4 @@
 ## Number Guesser New Tab Override 
 
-![](giphofworking.gif)
+![](numberguesser.gif)
 
