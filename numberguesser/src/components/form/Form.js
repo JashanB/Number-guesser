@@ -1,7 +1,7 @@
 import React from "react";
 import './Form.css';
 
-const Button = (props) => {
+export function Button (props) {
   return (
     <button data-testid="check-button" className="check-button" onClick={function () {
       if (props.checkAnswer === false) {
@@ -10,10 +10,8 @@ const Button = (props) => {
         console.log('input', props.inputNumber)
 
         if (props.actualAnswer == props.inputNumber) {
-          console.log('equal')
           props.setCompareAnswer(state => (true));
         } else {
-          console.log('not equal')
           props.setCompareAnswer(state => (false));
         }
       }
@@ -26,7 +24,7 @@ const Button = (props) => {
 export default function Form(props) {
   return (
     <div className="input-your-guess">
-      <form autoComplete="off" onSubmit={event => event.preventDefault()}>
+      <form data-testid="input-form" autoComplete="off" onSubmit={event => event.preventDefault()}>
         <input
           className="guess-number"
           type="number"
