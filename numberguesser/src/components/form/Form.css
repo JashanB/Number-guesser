@@ -1,0 +1,7 @@
+.check-button {
+  background-color: aqua;
+}
+
+.check-button:hover {
+  background-color: wheat;
+}

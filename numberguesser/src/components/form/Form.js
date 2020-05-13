@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import './Form.css';
 
 const Button = (props) => {
   return (
-    <button onClick={function () {
+    <button data-testid="check-button" className="check-button" onClick={function () {
       if (props.checkAnswer === false) {
         props.setCheckAnswer(state => (true));
         console.log('actual', props.actualAnswer)
