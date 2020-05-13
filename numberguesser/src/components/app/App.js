@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import logo from './logo.svg';
 import './App.css';
-import Form from './Form'
-import NumberSetter from './NumberSetter'
-import Result from './Result'
+import Form from '../form';
+import NumberSetter from '../numberSetter';
+import Result from '../result';
 
 function App() {
   const [inputNumber, setInputNumber] = useState(0);
@@ -23,7 +22,6 @@ function App() {
 
   useEffect(() => {
     let newNumber = makeRandomNumber(range);
-    console.log(restart)
     setActualAnswer(state => newNumber);
   }, [range, restart]);
 
