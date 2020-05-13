@@ -2,6 +2,6 @@
   background-color: aqua;
 }
 
-.check-button:hover {
+.check-button:active {
   background-color: wheat;
 }

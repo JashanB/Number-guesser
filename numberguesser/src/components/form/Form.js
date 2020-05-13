@@ -6,9 +6,6 @@ export function Button (props) {
     <button data-testid="check-button" className="check-button" onClick={function () {
       if (props.checkAnswer === false) {
         props.setCheckAnswer(state => (true));
-        console.log('actual', props.actualAnswer)
-        console.log('input', props.inputNumber)
-
         if (props.actualAnswer == props.inputNumber) {
           props.setCompareAnswer(state => (true));
         } else {
@@ -37,7 +34,7 @@ export default function Form(props) {
           data-testid="number-input"
         />
       </form>
-      <Button setCheckAnswer={props.setCheckAnswer} checkAnswer={props.checkAnswer} inputNumber={props.inputNumber} actualAnswer={props.actualAnswer} setCompareAnswer={props.setCompareAnswer} />
+      <Button setCheckAnswer={props.setCheckAnswer} inputNumber={props.inputNumber} actualAnswer={props.actualAnswer} setCompareAnswer={props.setCompareAnswer} />
     </div>
   )
 }
