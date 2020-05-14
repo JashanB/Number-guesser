@@ -38,6 +38,6 @@ it ("renders form correctly with passed down input", () => {
 //   expect(form).toHaveValue("10")
 // })
 it("matches snapshot", () => {
-  const tree = renderer.create(<Form inputNumber={5}></Form>).toJson();
+  const tree = renderer.create(<Form inputNumber={5}></Form>).toJSON();
   expect(tree).toMatchSnapshot();
 })

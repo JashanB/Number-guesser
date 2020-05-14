@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="input-your-guess"
+>
+  <form
+    autoComplete="off"
+    data-testid="input-form"
+    onSubmit={[Function]}
+  >
+    <input
+      className="guess-number"
+      data-testid="number-input"
+      onChange={[Function]}
+      placeholder="Guess a number!"
+      type="number"
+      value={5}
+    />
+  </form>
+  <button
+    className="check-button"
+    data-testid="check-button"
+    onClick={[Function]}
+  >
+    Check!
+  </button>
+</div>
+`;
