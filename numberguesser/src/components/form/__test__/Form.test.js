@@ -13,8 +13,13 @@ it("renders without crashing", () => {
 });
 
 it ("renders button correctly", () => {
-  const {getByTestId} = render(<Button inputNumber={0}></Button>);
+  const {getByTestId} = render(<Button range={0} inputNumber={0}></Button>);
   expect(getByTestId('check-button')).toHaveTextContent("Check!");
+});
+
+it ("renders invalid input correctly", () => {
+  const { getByTestId } = render(<Form range={0} inputNumber={1}></Form>);
+  expect(getByTestId('input-form-container')).toHaveTextContent("Invalid input");
 });
 
 it ("renders form correctly with passed down input", () => {

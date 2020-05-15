@@ -2,7 +2,7 @@ import React from "react";
 import './Form.css';
 
 export function Button(props) {
-  if (props.inputNumber === 0 || props.inputNumber) {
+  if (props.inputNumber <= props.range && (props.inputNumber === 0 || props.inputNumber)) {
     return (
       <button data-testid="check-button" className="check-button" onClick={function () {
         if (props.checkAnswer === false) {
@@ -24,7 +24,7 @@ export function Button(props) {
 
 export default function Form(props) {
   return (
-    <div className="input-your-guess">
+    <div className="input-your-guess" data-testid="input-form-container">
       <form data-testid="input-form" autoComplete="off" onSubmit={event => event.preventDefault()}>
         <input
           className="guess-number"
@@ -38,7 +38,7 @@ export default function Form(props) {
           data-testid="number-input"
         />
       </form>
-      <Button setCheckAnswer={props.setCheckAnswer} checkAnswer={props.checkAnswer} inputNumber={props.inputNumber} actualAnswer={props.actualAnswer} setCompareAnswer={props.setCompareAnswer} />
+      <Button range={props.range} setCheckAnswer={props.setCheckAnswer} checkAnswer={props.checkAnswer} inputNumber={props.inputNumber} actualAnswer={props.actualAnswer} setCompareAnswer={props.setCompareAnswer} />
     </div>
   )
 }
