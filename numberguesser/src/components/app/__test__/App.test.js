@@ -21,9 +21,9 @@ it("matches snapshot", () => {
   expect(tree).toMatchSnapshot();
 });
  
-it("compares answers and supplies true dialogue", async () => {
-  const {getByTestId, debug, getByText } = render(<App inputNumber="ee"></App>);
-  const checkButton = getByTestId('check-button')
-  fireEvent.click(checkButton);
-  getByText("Invalid input")
+it("supplies invalid input when NaN input", async () => {
+  const {getByTestId, debug, getByText } = render(<App></App>);
+  const input = getByTestId('number-input');
+  fireEvent.change(input, {target: {value: 'ee'}});
+  getByText("Invalid input");
 }); 
