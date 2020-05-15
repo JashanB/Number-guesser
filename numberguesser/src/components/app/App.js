@@ -21,8 +21,12 @@ function App() {
   };
 
   useEffect(() => {
-    let newNumber = makeRandomNumber(range);
-    setActualAnswer(state => newNumber);
+    if (range <= 0) {
+      setActualAnswer(state => 0);
+    } else {
+      let newNumber = makeRandomNumber(range);
+      setActualAnswer(state => newNumber);
+    }
   }, [range, restart]);
 
   return (
@@ -30,6 +34,7 @@ function App() {
       <h2>Need a break?</h2>
       <h3> Guess a number out of {range}</h3>
       <Form
+        range={range}
         checkAnswer={checkAnswer}
         setCheckAnswer={setCheckAnswer}
         actualAnswer={actualAnswer}

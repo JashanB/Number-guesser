@@ -3,6 +3,7 @@
 exports[`matches snapshot 1`] = `
 <div
   className="input-your-guess"
+  data-testid="input-form-container"
 >
   <form
     autoComplete="off"
@@ -18,12 +19,8 @@ exports[`matches snapshot 1`] = `
       value={5}
     />
   </form>
-  <button
-    className="check-button"
-    data-testid="check-button"
-    onClick={[Function]}
-  >
-    Check!
-  </button>
+  <span>
+    Invalid input
+  </span>
 </div>
 `;

@@ -27,3 +27,25 @@ it("supplies invalid input when NaN input", async () => {
   fireEvent.change(input, {target: {value: 'ee'}});
   getByText("Invalid input");
 }); 
+
+it("positive response when range and input changed to match", async () => {
+  const {getByTestId, debug, getByText } = render(<App></App>);
+  const input = getByTestId('number-input');
+  fireEvent.change(input, {target: {value: '0'}});
+  const setter = getByTestId('number-setter-form');
+  fireEvent.change(setter, {target: {value: '0'}});
+  const checkButton = getByTestId('check-button');
+  fireEvent.click(checkButton);
+  getByText('YOU DID IT! Answer was 0');
+}); 
+
+it("has negative response when range and input don't match", async () => {
+  const {getByTestId, debug, getByText } = render(<App></App>);
+  const input = getByTestId('number-input');
+  fireEvent.change(input, {target: {value: '-1'}});
+  const setter = getByTestId('number-setter-form');
+  fireEvent.change(setter, {target: {value: '0'}});
+  const checkButton = getByTestId('check-button');
+  fireEvent.click(checkButton);
+  getByText('Nooo wrong this time. Answer was 0');
+}); 
