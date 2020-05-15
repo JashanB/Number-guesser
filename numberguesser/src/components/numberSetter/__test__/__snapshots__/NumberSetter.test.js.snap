@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="set-your-number"
+>
+  <h3>
+    Change the range: 
+  </h3>
+  <form
+    autoComplete="off"
+    onSubmit={[Function]}
+  >
+    <input
+      className="number-setter"
+      data-testid="number-setter-form"
+      onChange={[Function]}
+      placeholder="Guess a number!"
+      type="number"
+      value={5}
+    />
+  </form>
+</div>
+`;
