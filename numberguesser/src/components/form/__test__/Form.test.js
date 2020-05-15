@@ -13,7 +13,7 @@ it("renders without crashing", () => {
 });
 
 it ("renders button correctly", () => {
-  const {getByTestId} = render(<Button></Button>);
+  const {getByTestId} = render(<Button inputNumber={0}></Button>);
   expect(getByTestId('check-button')).toHaveTextContent("Check!");
 });
 

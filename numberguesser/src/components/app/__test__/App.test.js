@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import App from './../App';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render, fireEvent, cleanup, waitForDomChange, getByText } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer';
 
@@ -20,3 +20,10 @@ it("matches snapshot", () => {
   const tree = renderer.create(<App></App>).toJSON();
   expect(tree).toMatchSnapshot();
 });
+ 
+it("compares answers and supplies true dialogue", async () => {
+  const {getByTestId, debug, getByText } = render(<App inputNumber="ee"></App>);
+  const checkButton = getByTestId('check-button')
+  fireEvent.click(checkButton);
+  getByText("Invalid input")
+}); 

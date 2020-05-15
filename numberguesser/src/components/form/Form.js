@@ -1,21 +1,25 @@
 import React from "react";
 import './Form.css';
 
-export function Button (props) {
-  return (
-    <button data-testid="check-button" className="check-button" onClick={function () {
-      if (props.checkAnswer === false) {
-        props.setCheckAnswer(state => (true));
-        if (props.actualAnswer == props.inputNumber) {
-          props.setCompareAnswer(state => (true));
-        } else {
-          props.setCompareAnswer(state => (false));
+export function Button(props) {
+  if (props.inputNumber === 0 || props.inputNumber) {
+    return (
+      <button data-testid="check-button" className="check-button" onClick={function () {
+        if (props.checkAnswer === false) {
+          props.setCheckAnswer(state => (true));
+          if (props.actualAnswer == props.inputNumber) {
+            props.setCompareAnswer(state => (true));
+          } else {
+            props.setCompareAnswer(state => (false));
+          }
         }
       }
-    }
-    }
-    >Check!</button>
-  )
+      }
+      >Check!</button>
+    )
+  } else {
+    return (<span>Invalid input</span>);
+  }
 }
 
 export default function Form(props) {
@@ -34,7 +38,7 @@ export default function Form(props) {
           data-testid="number-input"
         />
       </form>
-      <Button setCheckAnswer={props.setCheckAnswer} inputNumber={props.inputNumber} actualAnswer={props.actualAnswer} setCompareAnswer={props.setCompareAnswer} />
+      <Button setCheckAnswer={props.setCheckAnswer} checkAnswer={props.checkAnswer} inputNumber={props.inputNumber} actualAnswer={props.actualAnswer} setCompareAnswer={props.setCompareAnswer} />
     </div>
   )
 }
