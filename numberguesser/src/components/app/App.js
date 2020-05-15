@@ -26,7 +26,7 @@ function App() {
   }, [range, restart]);
 
   return (
-    <div className="App">
+    <div className="App" data-testid="app">
       <h2>Need a break?</h2>
       <h3> Guess a number out of {range}</h3>
       <Form

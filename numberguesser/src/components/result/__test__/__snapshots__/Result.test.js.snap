@@ -7,8 +7,10 @@ exports[`matches snapshot 1`] = `
 >
   <h3>
     Nooo wrong this time. Answer was 
+    5
   </h3>
   <button
+    data-testid="try-again-button"
     onClick={[Function]}
   >
     Try Again!

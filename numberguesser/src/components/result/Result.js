@@ -10,7 +10,7 @@ import React from "react";
 
 const Button = (props) => {
   return (
-    <button onClick={function () {
+    <button data-testid="try-again-button" onClick={function () {
       props.setCheckAnswer(state => (false));
       props.setInputNumber(state => 0);
       props.restart ? props.setRestart(state => false) : props.setRestart(state => true)

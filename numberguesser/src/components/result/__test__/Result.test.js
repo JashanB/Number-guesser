@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import Result from './../Result';
+import Button from './../Result';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer';
@@ -10,6 +11,12 @@ it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(<Result></Result>, div)
 });
+
+it ("renders button correctly", () => {
+  const {getByTestId} = render(<Button></Button>);
+  expect(getByTestId('try-again-button')).toHaveTextContent("Try Again!");
+});
+
 
 it ("renders conditional response based on true answer", () => {
   const {getByTestId} = render(<Result compareAnswer={true} actualAnswer={5}></Result>);
@@ -23,6 +30,6 @@ it ("renders conditional response based on false answer", () => {
 
 
 it("matches snapshot", () => {
-  const tree = renderer.create(<Result></Result>).toJSON();
+  const tree = renderer.create(<Result compareAnswer={false} actualAnswer={5}></Result>).toJSON();
   expect(tree).toMatchSnapshot();
 });
